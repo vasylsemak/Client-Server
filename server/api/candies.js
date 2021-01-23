@@ -20,5 +20,18 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+router.put('/:id', async(req, res, next) => {
+  try {
+    const candy = await Candy.findByPk(req.params.id)
+    if(!candy.id) res.sendStatus(404)
+    else {
+      await candy.update(req.body)
+      res.status(204).json(candy)
+    }
+  } catch (err) {
+    next(err)
+  }
+})
+
 module.exports = router;
 
