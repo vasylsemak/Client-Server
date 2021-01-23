@@ -9,7 +9,7 @@
 }
 
 body::after {
-  content: "";
+  content: '';
   background: url('bg.jpg');
   opacity: 0.1;
   top: 0;
@@ -34,4 +34,20 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.allCandies {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#singleCandy {
+  margin: 30px;
+  text-align: center;
+}
+
+#candyImg {
+  width: 250px;
 }
