@@ -1,18 +1,22 @@
 import React from 'react'
-import AllCandies from './AllCandies'
 import { HashRouter as Router, Route , Link } from 'react-router-dom'
+import NavBar from './NavBar'
+import AllCandies from './AllCandies'
+import OneCandy from './OneCandy'
 
 const Root = () => {
   return (
     <Router>
       <div>
-        <nav>
-          Goodie Bag
-        </nav>
+        <NavBar />
         <main>
           <h1>Welcome to the Goodie Bag!</h1>
           <p>What a nice home page for your goodies!</p>
-          <Route to='/' component={AllCandies} />
+          <Route exact path='/' component={AllCandies} />
+          <Route
+            path='/candies/:candyId'
+            render={(routeProps) => <OneCandy {...routeProps} />}
+          />
         </main>
       </div>
     </Router>
